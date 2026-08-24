@@ -24,9 +24,6 @@
                         </div>
                     </div>
                     <a href="#mental-performans" class="btn-main mobile-btn">Sınırlarını Aş</a>
-                    <div class="quote-box" style="margin-top: 2rem;">
-                        "Kariyerim boyunca 9000'den fazla şut kaçırdım. Hayatımda tekrar, tekrar ve tekrar başarısız oldum. Ve işte bu yüzden başardım."<br><span>– Michael Jordan</span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -51,9 +48,6 @@
                         </div>
                     </div>
                     <a href="#klinik-psikoloji" class="btn-main mobile-btn">Hizmetlerim</a>
-                    <div class="quote-box">
-                        "En karanlık anlarımızda bile ışığı bulabilmek, içimizdeki sese güvenmekle başlar."<br><span>– Klinik Psikoloji Yaklaşımı</span>
-                    </div>
                 </div>
             </div>
         </div>

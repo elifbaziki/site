@@ -27,21 +27,26 @@
                 
                 <!-- Contact Form -->
                 <div style="flex: 1; min-width: 300px; background: var(--white); padding: 3rem; border-radius: 20px; box-shadow: var(--shadow-md);">
+                    <?php if(isset($_GET['success'])): ?>
+                        <div style="padding: 15px; background: #dcfce7; color: #166534; border-radius: 4px; margin-bottom: 20px;">
+                            Mesajınız başarıyla gönderildi. En kısa sürede size dönüş yapacağım.
+                        </div>
+                    <?php endif; ?>
                     <h3 style="font-family: var(--font-main) !important; font-weight: 800; margin-bottom: 1.5rem; color: var(--primary-color);">Mesaj Gönderin</h3>
-                    <form>
+                    <form action="<?php echo BASE_URL; ?>/submit-contact" method="POST">
                         <div style="margin-bottom: 1.5rem;">
                             <label style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-dark);">Ad Soyad</label>
-                            <input type="text" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1rem;" required>
+                            <input type="text" name="name" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1rem;" required>
                         </div>
                         
                         <div style="margin-bottom: 1.5rem;">
                             <label style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-dark);">E-posta Adresi</label>
-                            <input type="email" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1rem;" required>
+                            <input type="email" name="email" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1rem;" required>
                         </div>
                         
                         <div style="margin-bottom: 1.5rem;">
                             <label style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-dark);">Konu</label>
-                            <select style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1rem;">
+                            <select name="subject" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1rem;">
                                 <option>Bireysel Görüşme</option>
                                 <option>Kurumsal Çalışmalar</option>
                                 <option>Mental Performans Koçluğu</option>
@@ -52,7 +57,7 @@
                         
                         <div style="margin-bottom: 1.5rem;">
                             <label style="display: block; margin-bottom: 0.5rem; font-size: 0.9rem; color: var(--text-dark);">Mesajınız</label>
-                            <textarea rows="5" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1rem; resize: vertical;" required></textarea>
+                            <textarea name="message" rows="5" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1rem; resize: vertical;" required></textarea>
                         </div>
                         
                         <button type="submit" class="btn-main" style="width: 100%; cursor: pointer;">Gönder</button>

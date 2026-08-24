@@ -14,7 +14,8 @@
     <meta property="og:image" content="<?php echo BASE_URL . ($og_image ?? '/assets/images/elif-yeni.jpg'); ?>">
     <meta property="og:type" content="website">
 
-    <title><?php echo htmlspecialchars($site_title ?? get_setting($db, 'site_title')); ?></title>
+    <title><?php echo isset($site_title) ? $site_title : 'Elif Baziki'; ?></title>
+    <link rel="icon" type="image/png" href="<?php echo BASE_URL; ?>/assets/images/favicon.png">
 
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">

@@ -122,7 +122,9 @@ if ($action == 'settings' && $_SERVER['REQUEST_METHOD'] == 'POST') {
 <div class="sidebar">
     <h2>CMS Panel</h2>
     <a href="?action=dashboard">Gösterge Paneli</a>
+    <a href="messages.php">İletişim Mesajları</a>
     <a href="blog-manager.php">Blog Yazıları</a>
+    <a href="test-manager.php">Psikoloji Testleri</a>
     <a href="?action=settings">Site SEO Ayarları</a>
     <a href="../" target="_blank">Siteyi Görüntüle</a>
     <form method="POST" style="margin:0; padding:0;">
@@ -136,6 +138,8 @@ if ($action == 'settings' && $_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php if($action == 'dashboard'): 
         $post_count = $db->query("SELECT count(*) FROM blog_posts")->fetchColumn();
         $test_count = $db->query("SELECT count(*) FROM tests")->fetchColumn();
+        $msg_count = $db->query("SELECT count(*) FROM contact_messages WHERE is_read = 0")->fetchColumn();
+        $view_count = $db->query("SELECT count(*) FROM page_views")->fetchColumn();
     ?>
         <h1>Hoş Geldiniz, Elif Hanım</h1>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
@@ -148,6 +152,15 @@ if ($action == 'settings' && $_SERVER['REQUEST_METHOD'] == 'POST') {
                 <h3 style="margin-top:0; color: #666;">Aktif Psikoloji Testleri</h3>
                 <div style="font-size: 3rem; font-weight: bold; color: var(--primary-color, #1a365d);"><?php echo $test_count; ?></div>
                 <a href="test-manager.php" class="btn" style="margin-top:15px;">Testleri Yönet</a>
+            </div>
+            <div class="card" style="text-align: center; margin-bottom: 0;">
+                <h3 style="margin-top:0; color: #666;">Okunmamış Mesajlar</h3>
+                <div style="font-size: 3rem; font-weight: bold; color: #ea580c;"><?php echo $msg_count; ?></div>
+                <a href="messages.php" class="btn" style="margin-top:15px;">Mesajlara Git</a>
+            </div>
+            <div class="card" style="text-align: center; margin-bottom: 0;">
+                <h3 style="margin-top:0; color: #666;">Toplam Sayfa Görüntüleme</h3>
+                <div style="font-size: 3rem; font-weight: bold; color: #16a34a;"><?php echo $view_count; ?></div>
             </div>
         </div>
         

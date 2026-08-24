@@ -28,7 +28,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $meta_description = $_POST['meta_description'];
         $focus_keyword = $_POST['focus_keyword'];
         $keywords = $_POST['keywords'];
-        $featured_image = $_POST['featured_image']; // URL for now
+        $featured_image = $_POST['featured_image']; 
+        
+        // Handle file upload
+        if (isset($_FILES['featured_image_file']) && $_FILES['featured_image_file']['error'] == UPLOAD_ERR_OK) {
+            $upload_dir = dirname(__DIR__) . '/assets/images/';
+            if (!is_dir($upload_dir)) mkdir($upload_dir, 0755, true);
+            $filename = time() . '_' . basename($_FILES['featured_image_file']['name']);
+            $target_file = $upload_dir . $filename;
+            if (move_uploaded_file($_FILES['featured_image_file']['tmp_name'], $target_file)) {
+                $featured_image = '/assets/images/' . $filename;
+            }
+        }
+        
         $id = $_POST['post_id'] ?? null;
         
         if ($id) {
@@ -79,9 +91,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div class="sidebar">
     <h2>CMS Panel</h2>
     <a href="index.php?action=dashboard">Gösterge Paneli</a>
-    <a href="blog-manager.php">Blog Yazıları</a>
+    <a href="messages.php">İletişim Mesajları</a>
+    <a href="blog-manager.php" style="background: #ea580c;">Blog Yazıları</a>
+    <a href="test-manager.php">Psikoloji Testleri</a>
     <a href="index.php?action=settings">Site SEO Ayarları</a>
     <a href="../" target="_blank">Siteyi Görüntüle</a>
+    <form method="POST" action="index.php" style="margin:0; padding:0;">
+        <button type="submit" name="logout" style="width:100%; text-align:left; background:none; border:none; color:white; padding:15px 20px; cursor:pointer; font-size:16px; border-bottom: 1px solid rgba(255,255,255,0.1);">Çıkış Yap</button>
+    </form>
 </div>
 
 <div class="content">
@@ -132,7 +149,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     ?>
         <h1><?php echo $id ? 'Yazıyı Düzenle' : 'Yeni Yazı Ekle'; ?></h1>
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             <input type="hidden" name="post_id" value="<?php echo $id; ?>">
             <div class="flex-row">
                 <div class="flex-col" style="flex: 2;">
@@ -146,6 +163,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
                 <div class="flex-col" style="flex: 1;">
                     <div class="card">
+                        <h3>Kategori ve Yazar</h3>
+                        <label>Kategori</label>
+                        <select name="keywords" style="width: 100%; padding: 10px; margin-top: 5px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;">
+                            <option value="Performans Psikolojisi" <?php echo $p['keywords']=='Performans Psikolojisi'?'selected':'';?>>Performans Psikolojisi</option>
+                            <option value="Bilişsel Antrenman" <?php echo $p['keywords']=='Bilişsel Antrenman'?'selected':'';?>>Bilişsel Antrenman</option>
+                            <option value="DEHB (ADHD)" <?php echo $p['keywords']=='DEHB (ADHD)'?'selected':'';?>>DEHB (ADHD)</option>
+                            <option value="Genel" <?php echo $p['keywords']=='Genel'?'selected':'';?>>Genel</option>
+                        </select>
+                        <label>Yazar</label>
+                        <input type="text" value="Elif Baziki" readonly disabled>
+                        
+                        <h3>Görsel (Öne Çıkan)</h3>
+                        <label>Mevcut URL (veya boş bırakıp dosya seçin)</label>
+                        <input type="text" name="featured_image" value="<?php echo htmlspecialchars($p['featured_image']); ?>">
+                        <label>Bilgisayardan Yükle</label>
+                        <input type="file" name="featured_image_file" accept="image/*" style="margin-bottom: 15px; display:block;">
+                        
                         <h3>SEO ve Meta Verileri</h3>
                         <label>Meta Description</label>
                         <textarea name="meta_description" rows="3"><?php echo htmlspecialchars($p['meta_description']); ?></textarea>
@@ -153,13 +187,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <label>Odak Anahtar Kelime (Focus Keyword)</label>
                         <input type="text" name="focus_keyword" value="<?php echo htmlspecialchars($p['focus_keyword']); ?>" placeholder="Örn: Mental Performans">
                         <small style="color:#666; display:block; margin-top:-10px; margin-bottom:15px;">Bu kelime otomatik iç linkleme (internal link) için kullanılacaktır.</small>
-                        
-                        <label>Etiketler (Keywords - virgülle ayırın)</label>
-                        <input type="text" name="keywords" value="<?php echo htmlspecialchars($p['keywords']); ?>">
-                        
-                        <label>Öne Çıkan Görsel Linki (URL)</label>
-                        <input type="text" name="featured_image" value="<?php echo htmlspecialchars($p['featured_image']); ?>" placeholder="/assets/images/blog1.jpg">
-                        <small style="color:#666; display:block; margin-top:-10px; margin-bottom:15px;">Şimdilik klasördeki resmin yolunu yazınız.</small>
                         
                         <button type="submit" name="save_post" class="btn" style="width: 100%; margin-top:20px;">Kaydet / Yayınla</button>
                     </div>

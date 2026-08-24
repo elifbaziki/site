@@ -10,6 +10,8 @@ if ($route == '' || $route == 'anasayfa' || $route == 'index') {
 } elseif ($route == 'admin' || strpos($route, 'admin/') === 0) {
     header('Location: ' . BASE_URL . '/admin/');
     exit;
+} elseif ($route == 'submit-contact') {
+    $page = 'submit-contact.php';
 } elseif ($route == 'blog') {
     $page = 'blog-liste.php';
 } elseif (preg_match('#^blog/(.+)$#', $route, $matches)) {
@@ -38,6 +40,13 @@ $site_title = get_setting($db, 'site_title', 'Elif Baziki | Psikolog & Mental Pe
 $meta_description = get_setting($db, 'meta_description', 'Elif Baziki - Mental Performans Koçluğu ve Psikolojik Danışmanlık');
 
 // Include the template
+if (!isset($_SESSION['admin_logged_in'])) {
+    $ip = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
+    $url = $_SERVER['REQUEST_URI'] ?? '/';
+    $stmt = $db->prepare("INSERT INTO page_views (page_url, ip_address) VALUES (?, ?)");
+    $stmt->execute([$url, $ip]);
+}
+
 $template_path = BASE_PATH . '/templates/' . $page;
 if (file_exists($template_path)) {
     require $template_path;

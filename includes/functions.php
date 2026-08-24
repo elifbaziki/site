@@ -52,7 +52,14 @@ function auto_internal_link($db, $content) {
 
 // Ensure unique slug
 function generate_slug($db, $title, $id = null) {
+    // Transliterate Turkish characters
+    $search  = array('ç', 'Ç', 'ğ', 'Ğ', 'ı', 'I', 'İ', 'ö', 'Ö', 'ş', 'Ş', 'ü', 'Ü');
+    $replace = array('c', 'c', 'g', 'g', 'i', 'i', 'i', 'o', 'o', 's', 's', 'u', 'u');
+    $title = str_replace($search, $replace, $title);
+    
+    // Remove invalid characters and create slug
     $slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $title)));
+    $slug = trim($slug, '-');
     
     // Check if slug exists
     $sql = "SELECT count(*) FROM blog_posts WHERE slug = ?";

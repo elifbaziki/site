@@ -11,8 +11,8 @@
                 
                 <div class="hover-details">
                     <p style="color: #cbd5e1; font-size: 1.1rem; margin-bottom: 1.5rem;">Motorsporları, Performans Sanatçıları, Dikkat Eksikliği ve Hiperaktivite Bozukluğu, İş dünyası Profesyonelleri ve sınav dönemindeki Öğrenciler için optimal performansa erişim..</p>
-                    <div style="display: flex; align-items: center; justify-content: flex-start; gap: 18rem; margin-top: 1.5rem; margin-bottom: 1rem;">
-                        <ul style="margin: 0;">
+                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; margin-top: 1.5rem; margin-bottom: 1rem; text-align: center;">
+                        <ul style="margin: 0; list-style-position: inside; padding: 0; transform: translateY(-20%);">
                             <li><i class="fas fa-bolt"></i> Yüksek Performans Koçluğu</li>
                             <li><i class="fas fa-brain"></i> Beyin Antrenmanları</li>
                             <li><i class="fas fa-fire"></i> Peak (Yüksek) Performans</li>

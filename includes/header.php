@@ -52,7 +52,7 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="<?php echo BASE_URL; ?>" class="logo" style="display:flex; flex-direction:column; line-height:1.2; align-items:center; text-align:center;">
+            <a href="<?php echo BASE_URL; ?>" class="logo" style="display:flex; flex-direction:column; line-height:1.2; align-items:center; text-align:center; transform: translateX(-40%);">
                 Elif Baziki
                 <span style="font-size: 0.65rem; font-weight: 600; color: #777; letter-spacing: 2px; text-transform: uppercase;">KLİNİK PSİKOLOG & MENTAL PERFORMANS KOÇU</span>
             </a>
@@ -63,10 +63,10 @@
             <div class="nav-links">
                 <a href="<?php echo BASE_URL; ?>"><i class="fas fa-home" style="margin-right: 5px;"></i> Anasayfa</a>
                 <a href="<?php echo BASE_URL; ?>/hakkimda"><i class="fas fa-user" style="margin-right: 5px;"></i> Hakkımda</a>
-                <a href="<?php echo BASE_URL; ?>/uzmanlik-alanlari"><i class="fas fa-star" style="margin-right: 5px;"></i> Uzmanlık Alanlarım</a>
-                <a href="<?php echo BASE_URL; ?>/hizmetler"><i class="fas fa-briefcase" style="margin-right: 5px;"></i> Hizmetler</a>
-                <a href="<?php echo BASE_URL; ?>/blog"><i class="fas fa-pen-nib" style="margin-right: 5px;"></i> Blog</a>
-                <a href="<?php echo BASE_URL; ?>/iletisim"><i class="fas fa-envelope" style="margin-right: 5px;"></i> İletişim</a>
+                <a href="<?php echo BASE_URL; ?>/uzmanlik-alanlari"><i class="fas fa-brain" style="margin-right: 5px;"></i> Uzmanlık Alanlarım</a>
+                <a href="<?php echo BASE_URL; ?>/hizmetler"><i class="fas fa-couch" style="margin-right: 5px;"></i> Hizmetler</a>
+                <a href="<?php echo BASE_URL; ?>/blog"><i class="fas fa-book-open" style="margin-right: 5px;"></i> Blog</a>
+                <a href="<?php echo BASE_URL; ?>/iletisim"><i class="far fa-paper-plane" style="margin-right: 5px;"></i> İletişim</a>
                 <a href="https://wa.me/905307200396" target="_blank" class="btn btn-primary" style="display: none !important;">Online Terapi</a>
             </div>
         </div>

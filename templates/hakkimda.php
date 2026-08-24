@@ -1,7 +1,7 @@
 <?php require_once BASE_PATH . "/includes/header.php"; ?>
 
 <!-- Page Header -->
-    <header class="hero hide-on-mobile" style="min-height: 250px; height: 250px;">
+    <header class="hero hide-on-mobile" style="min-height: 120px; height: 120px;">
         <div class="hero-slider">
             <div class="slide active" style="background-image: url('<?php echo BASE_URL; ?>/assets/images/photo1.jpg'); background-position: center 30%;"></div>
         </div>
@@ -9,7 +9,7 @@
 
     <!-- About Section -->
     <section class="section about-section" style="padding-top: 0rem;">
-        <div class="container" style="max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start;">
+        <div class="container" style="max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start;">
             
             <!-- Left Side: Overlapping Photo Collage -->
             <div class="about-collage">

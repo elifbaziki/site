@@ -3,7 +3,7 @@
 <!-- Hero Section -->
     <header class="hero" style="min-height: 500px; height: 55vh; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; margin-top: 80px; background-color: #111827;">
         <!-- Left Background (Piano) -->
-        <div id="heroBgLeft" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('<?php echo BASE_URL; ?>/assets/images/specialties_presentation_6.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1;"></div>
+        <div id="heroBgLeft" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('<?php echo BASE_URL; ?>/assets/images/specialties_presentation_6.jpg'); background-size: contain; background-position: center; background-repeat: no-repeat; z-index: 1;"></div>
         
         <!-- Subtle Unified Vignette / Gradient Overlay -->
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(31, 41, 55, 0.4), rgba(17, 24, 39, 0.6)); z-index: 2;"></div>

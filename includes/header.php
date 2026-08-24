@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
@@ -54,7 +54,7 @@
         <div class="container nav-container">
             <a href="<?php echo BASE_URL; ?>" class="logo" style="display:flex; flex-direction:column; line-height:1.2; align-items:center; text-align:center;">
                 Elif Baziki
-                <span style="font-size: 0.65rem; font-weight: 600; color: #777; letter-spacing: 2px; text-transform: uppercase;">KLİNİK PSİKOLOG & MENTAL PERFORMANS KOÇU</span>
+                <span style="font-size: 0.65rem; font-weight: 300; color: #777; letter-spacing: 2px; text-transform: uppercase;">KLİNİK PSİKOLOG & MENTAL PERFORMANS KOÇU</span>
             </a>
             
             <button class="mobile-menu-btn" aria-label="Menü">
@@ -62,7 +62,7 @@
             </button>
             <div class="nav-links">
                 <a href="<?php echo BASE_URL; ?>">Anasayfa</a>
-                <a href="<?php echo BASE_URL; ?>/hakkimda">Hakkında</a>
+                <a href="<?php echo BASE_URL; ?>/hakkimda">Hakkımda</a>
                 <a href="<?php echo BASE_URL; ?>/uzmanlik-alanlari" class="hide-on-mobile">Uzmanlık Alanlarım</a>
                 <a href="<?php echo BASE_URL; ?>/hizmetler">Hizmetler</a>
                 <a href="<?php echo BASE_URL; ?>/blog">Blog</a>

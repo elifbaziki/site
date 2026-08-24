@@ -1,4 +1,4 @@
-<?php require_once BASE_PATH . "/includes/header.php"; ?>
+﻿<?php require_once BASE_PATH . "/includes/header.php"; ?>
 
 <!-- Contact Section -->
     <section class="section contact-section" style="margin-top: 80px; padding-top: 3rem; padding-bottom: 3rem;">
@@ -11,17 +11,17 @@
                     
                     <div style="margin-bottom: 2rem;">
                         <h4 style="font-family: var(--font-main) !important; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem;"><i class="fas fa-map-marker-alt" style="color: var(--accent); margin-right: 10px;"></i> Adres</h4>
-                        <p style="color: var(--text-light); margin-left: 25px;">Kadıköy, İstanbul, Türkiye</p>
+                        <p style="color: var(--text-light); margin-left: 25px;"><?php echo htmlspecialchars(get_setting($db, 'contact_address', 'İstanbul, Türkiye')); ?></p>
                     </div>
                     
                     <div style="margin-bottom: 2rem;">
                         <h4 style="font-family: var(--font-main) !important; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem;"><i class="fas fa-phone" style="color: var(--accent); margin-right: 10px;"></i> Telefon & WhatsApp</h4>
-                        <p style="color: var(--text-light); margin-left: 25px;">+90 530 720 03 96</p>
+                        <p style="color: var(--text-light); margin-left: 25px;"><?php echo htmlspecialchars(get_setting($db, 'contact_phone', '+90 (530) 720 03 96')); ?></p>
                     </div>
                     
                     <div style="margin-bottom: 2rem;">
                         <h4 style="font-family: var(--font-main) !important; font-weight: 700; color: var(--text-dark); margin-bottom: 0.5rem;"><i class="fas fa-envelope" style="color: var(--accent); margin-right: 10px;"></i> E-posta</h4>
-                        <p style="color: var(--text-light); margin-left: 25px;">iletisim@elifbaziki.com</p>
+                        <p style="color: var(--text-light); margin-left: 25px;"><?php echo htmlspecialchars(get_setting($db, 'contact_email', 'info@elifbaziki.com')); ?></p>
                     </div>
                 </div>
                 

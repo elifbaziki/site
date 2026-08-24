@@ -1034,3 +1034,6 @@ body.page-specialties .card p {
     display: none !important; /* Mobil versiyonda fotoğrafları kaldırıyoruz */
   }
 }
+
+p { text-align: justify; }
+

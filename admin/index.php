@@ -94,6 +94,15 @@ if ($action == 'settings' && $_SERVER['REQUEST_METHOD'] == 'POST') {
     set_setting($db, 'meta_description', $_POST['meta_description']);
     $success = "Ayarlar başarıyla kaydedildi.";
 }
+if ($action == 'contact_settings' && $_SERVER['REQUEST_METHOD'] == 'POST') {
+    set_setting($db, 'social_instagram', $_POST['social_instagram']);
+    set_setting($db, 'social_linkedin', $_POST['social_linkedin']);
+    set_setting($db, 'social_youtube', $_POST['social_youtube']);
+    set_setting($db, 'contact_phone', $_POST['contact_phone']);
+    set_setting($db, 'contact_email', $_POST['contact_email']);
+    set_setting($db, 'contact_address', $_POST['contact_address']);
+    $success = "İletişim ve sosyal medya ayarları kaydedildi.";
+}
 ?>
 <!DOCTYPE html>
 <html lang="tr">
@@ -126,6 +135,7 @@ if ($action == 'settings' && $_SERVER['REQUEST_METHOD'] == 'POST') {
     <a href="blog-manager.php">Blog Yazıları</a>
     <a href="test-manager.php">Psikoloji Testleri</a>
     <a href="?action=settings">Site SEO Ayarları</a>
+    <a href="?action=contact_settings">İletişim & Sosyal Medya</a>
     <a href="../" target="_blank">Siteyi Görüntüle</a>
     <form method="POST" style="margin:0; padding:0;">
         <button type="submit" name="logout" style="width:100%; text-align:left; background:none; border:none; color:white; padding:15px 20px; cursor:pointer; font-size:16px; border-bottom: 1px solid rgba(255,255,255,0.1);">Çıkış Yap</button>
@@ -138,7 +148,7 @@ if ($action == 'settings' && $_SERVER['REQUEST_METHOD'] == 'POST') {
     <?php if($action == 'dashboard'): 
         $post_count = $db->query("SELECT count(*) FROM blog_posts")->fetchColumn();
         $test_count = $db->query("SELECT count(*) FROM tests")->fetchColumn();
-        $msg_count = $db->query("SELECT count(*) FROM contact_messages WHERE is_read = 0")->fetchColumn();
+        $msg_count = $db->query("SELECT count(*) FROM contact_messages")->fetchColumn();
         $view_count = $db->query("SELECT count(*) FROM page_views")->fetchColumn();
     ?>
         <h1>Hoş Geldiniz, Elif Hanım</h1>
@@ -180,7 +190,35 @@ if ($action == 'settings' && $_SERVER['REQUEST_METHOD'] == 'POST') {
                 <button type="submit" class="btn">Ayarları Kaydet</button>
             </form>
         </div>
+    <?php elseif($action == 'contact_settings'): ?>
+        <h1>İletişim & Sosyal Medya Ayarları</h1>
+        <div class="card">
+            <form method="POST">
+                <label>Instagram URL</label>
+                <input type="text" name="social_instagram" value="<?php echo htmlspecialchars(get_setting($db, 'social_instagram', '#')); ?>">
+                
+                <label>LinkedIn URL</label>
+                <input type="text" name="social_linkedin" value="<?php echo htmlspecialchars(get_setting($db, 'social_linkedin', '#')); ?>">
+                
+                <label>YouTube URL</label>
+                <input type="text" name="social_youtube" value="<?php echo htmlspecialchars(get_setting($db, 'social_youtube', '#')); ?>">
+                
+                <hr style="margin: 20px 0; border: 0; border-top: 1px solid #ddd;">
+
+                <label>İletişim - Telefon</label>
+                <input type="text" name="contact_phone" value="<?php echo htmlspecialchars(get_setting($db, 'contact_phone', '+90 (530) 720 03 96')); ?>">
+                
+                <label>İletişim - E-Posta</label>
+                <input type="text" name="contact_email" value="<?php echo htmlspecialchars(get_setting($db, 'contact_email', 'info@elifbaziki.com')); ?>">
+                
+                <label>İletişim - Adres</label>
+                <textarea name="contact_address" rows="3"><?php echo htmlspecialchars(get_setting($db, 'contact_address', 'İstanbul, Türkiye')); ?></textarea>
+                
+                <button type="submit" class="btn">Ayarları Kaydet</button>
+            </form>
+        </div>
     <?php endif; ?>
+</div>
 </div>
 
 </body>

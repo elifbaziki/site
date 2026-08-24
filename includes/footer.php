@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Fetch footer links grouped by column
 $stmt = $db->query("SELECT * FROM footer_links ORDER BY column_name, sort_order ASC, id ASC");
 $links_raw = $stmt->fetchAll();
@@ -12,6 +12,11 @@ foreach($links_raw as $l) {
         $footer_data[$l['column_name']][] = $l;
     }
 }
+$social_instagram = get_setting($db, 'social_instagram', '#');
+$social_linkedin = get_setting($db, 'social_linkedin', '#');
+$social_youtube = get_setting($db, 'social_youtube', '#');
+$contact_phone_raw = get_setting($db, 'contact_phone', '+905307200396');
+$contact_phone_tel = preg_replace('/[^0-9+]/', '', $contact_phone_raw);
 ?>
     <!-- Footer -->
     <footer class="footer">
@@ -21,25 +26,27 @@ foreach($links_raw as $l) {
             <div class="footer-brand">
                 <a href="<?php echo BASE_URL; ?>" class="logo" style="display:flex; flex-direction:column; line-height:1.2; color: #fff; align-items:flex-start;">
                     Elif Baziki
-                    <span style="font-size: 0.65rem; font-weight: 600; color: #bbb; letter-spacing: 2px; text-transform: uppercase;">KLİNİK PSİKOLOG & MENTAL PERFORMANS KOÇU</span>
+                    <span style="font-size: 0.65rem; font-weight: 300; color: #bbb; letter-spacing: 2px; text-transform: uppercase;">KLİNİK PSİKOLOG & MENTAL PERFORMANS KOÇU</span>
                 </a>
                 <p>Sporcular, liderler ve profesyoneller için yüksek performans koçluğu ve psikolojik danışmanlık.</p>
-                <div class="social-links" style="margin-top: 15px;">
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <div class="social-links" style="margin-top: 15px; display: flex; align-items: center; gap: 15px;">
+                    <a href="<?php echo htmlspecialchars($social_instagram); ?>" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <span style="color: #666;">|</span>
+                    <a href="<?php echo htmlspecialchars($social_linkedin); ?>" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <span style="color: #666;">|</span>
+                    <a href="<?php echo htmlspecialchars($social_youtube); ?>" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             
             <!-- Column 2: Kurumsal -->
             <div class="footer-links">
-                <h3 style="color: #94a3b8; font-weight: 600;">Kurumsal</h3>
+                <h3 style="color: #94a3b8; font-weight: 300;">Kurumsal</h3>
                 <ul style="list-style: none; padding: 0; margin: 0;">
                     <?php foreach($footer_data['kurumsal'] as $l): ?>
                         <li style="margin-bottom: 10px;"><a href="<?php echo BASE_URL . $l['link_url']; ?>" style="color: #ccc; text-decoration: none;"><?php echo htmlspecialchars($l['link_title']); ?></a></li>
                     <?php endforeach; ?>
                     <?php if(empty($footer_data['kurumsal'])): ?>
-                        <li style="margin-bottom: 10px;"><a href="<?php echo BASE_URL; ?>/hakkimda" style="color: #ccc; text-decoration: none;">Hakkımızda</a></li>
+                        <li style="margin-bottom: 10px;"><a href="<?php echo BASE_URL; ?>/hakkimda" style="color: #ccc; text-decoration: none;">Hakkımda</a></li>
                         <li style="margin-bottom: 10px;"><a href="<?php echo BASE_URL; ?>/hizmetler" style="color: #ccc; text-decoration: none;">Hizmetler</a></li>
                     <?php endif; ?>
                 </ul>
@@ -47,7 +54,7 @@ foreach($links_raw as $l) {
             
             <!-- Column 3: Yasal Mevzuatlar -->
             <div class="footer-links">
-                <h3 style="color: #94a3b8; font-weight: 600;">Yasal Mevzuatlar</h3>
+                <h3 style="color: #94a3b8; font-weight: 300;">Yasal Mevzuatlar</h3>
                 <ul style="list-style: none; padding: 0; margin: 0;">
                     <?php foreach($footer_data['yasal'] as $l): ?>
                         <li style="margin-bottom: 10px;"><a href="<?php echo BASE_URL . $l['link_url']; ?>" style="color: #ccc; text-decoration: none;"><?php echo htmlspecialchars($l['link_title']); ?></a></li>
@@ -61,7 +68,7 @@ foreach($links_raw as $l) {
 
             <!-- Column 4: Hızlı Erişim -->
             <div class="footer-links">
-                <h3 style="color: #94a3b8; font-weight: 600;">Hızlı Erişim</h3>
+                <h3 style="color: #94a3b8; font-weight: 300;">Hızlı Erişim</h3>
                 <ul style="list-style: none; padding: 0; margin: 0;">
                     <?php foreach($footer_data['hizli_erisim'] as $l): ?>
                         <li style="margin-bottom: 10px;"><a href="<?php echo BASE_URL . $l['link_url']; ?>" style="color: #ccc; text-decoration: none;"><?php echo htmlspecialchars($l['link_title']); ?></a></li>
@@ -82,7 +89,7 @@ foreach($links_raw as $l) {
     </footer>
 
     <!-- Mobile Sticky CTA -->
-    <a href="tel:+905307200396" class="mobile-sticky-cta">
+    <a href="tel:<?php echo $contact_phone_tel; ?>" class="mobile-sticky-cta">
         <i class="fas fa-phone-alt"></i> Hemen Ara
     </a>
 

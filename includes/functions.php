@@ -5,17 +5,6 @@ function get_all_posts($db) {
     return $stmt->fetchAll();
 }
 
-function get_paginated_posts($db, $limit = 12, $offset = 0) {
-    $stmt = $db->prepare("SELECT * FROM blog_posts ORDER BY created_at DESC LIMIT ? OFFSET ?");
-    $stmt->execute([$limit, $offset]);
-    return $stmt->fetchAll();
-}
-
-function get_total_posts_count($db) {
-    $stmt = $db->query("SELECT COUNT(*) FROM blog_posts");
-    return $stmt->fetchColumn();
-}
-
 function get_post_by_slug($db, $slug) {
     $stmt = $db->prepare("SELECT * FROM blog_posts WHERE slug = ?");
     $stmt->execute([$slug]);

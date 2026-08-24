@@ -376,12 +376,21 @@ ul {
 
 .split-left i {
   color: var(--neon-pink);
+}
+
+@keyframes adrenaline-pulse {
+  0% { transform: scale(1); box-shadow: 0 0 15px rgba(255, 69, 0, 0.4); border-color: var(--neon-orange); }
+  50% { transform: scale(1.05); box-shadow: 0 0 35px rgba(255, 69, 0, 0.8), 0 0 15px rgba(255, 69, 0, 0.6); border-color: #ff2a00; color: #fff; text-shadow: 0 0 8px rgba(255,255,255,0.5); }
+  100% { transform: scale(1); box-shadow: 0 0 15px rgba(255, 69, 0, 0.4); border-color: var(--neon-orange); }
+}
+
 .split-left .btn-main {
   background: transparent;
   border: 2px solid var(--neon-orange);
   color: var(--neon-orange);
   margin-top: 2rem;
   box-shadow: 0 0 15px rgba(255, 69, 0, 0.3);
+  animation: adrenaline-pulse 1.2s infinite ease-in-out;
 }
 
 .split-left .btn-main:hover {
@@ -916,15 +925,18 @@ body.page-specialties .card p {
   .hover-details p, 
   .hover-details ul, 
   .hover-details .quote-box {
-    display: block; 
+    display: none; 
   }
   
   /* Show only the buttons */
   .split-left .desktop-btn, .split-right .desktop-btn {
-    display: inline-block !important;
+    display: none !important;
   }
   .split-left .mobile-btn, .split-right .mobile-btn {
-    display: none !important;
+    display: inline-block !important;
+    margin-top: 1rem;
+    padding: 0.6rem 1.4rem;
+    font-size: 0.85rem;
   }
 
   /* Prevent any hover expansions on mobile */
@@ -934,7 +946,7 @@ body.page-specialties .card p {
   }
 
   #ben-kimim {
-    display: block; /* Show Ben Kimim on mobile */
+    display: none; /* Hide Ben Kimim on mobile */
   }
   .mobile-services-section {
     display: block; /* Show grids on mobile */
@@ -950,15 +962,12 @@ body.page-specialties .card p {
     flex-direction: column;
     padding: 2rem;
     box-shadow: var(--shadow-md);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
+    transform: translateY(-150%);
+    transition: var(--transition);
+    z-index: -1;
   }
   
   .nav-links.active {
-    opacity: 1;
-    visibility: visible;
     transform: translateY(0);
   }
   
@@ -967,7 +976,7 @@ body.page-specialties .card p {
   }
   
   .hide-on-mobile {
-    display: block !important;
+    display: none !important;
   }
   
   .about-section, .contact-section {
@@ -1017,10 +1026,8 @@ body.page-specialties .card p {
   transform: scale(1.05) translateX(10px);
   z-index: 3;
 }
-  @media (max-width: 991px) {
-    .about-collage {
-      display: block !important; 
-      height: 300px;
-      margin-bottom: 2rem;
-    }
+@media (max-width: 991px) {
+  .about-collage {
+    display: none !important; /* Mobil versiyonda fotoğrafları kaldırıyoruz */
   }
+}

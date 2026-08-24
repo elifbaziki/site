@@ -61,12 +61,12 @@
                 <svg width="28" height="10" viewBox="0 0 28 10" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="28" height="1.5" fill="currentColor"/><rect y="8.5" width="28" height="1.5" fill="currentColor"/></svg>
             </button>
             <div class="nav-links">
-                <a href="<?php echo BASE_URL; ?>">Anasayfa</a>
-                <a href="<?php echo BASE_URL; ?>/hakkimda">Hakkında</a>
-                <a href="<?php echo BASE_URL; ?>/uzmanlik-alanlari" class="hide-on-mobile">Uzmanlık Alanlarım</a>
-                <a href="<?php echo BASE_URL; ?>/hizmetler">Hizmetler</a>
-                <a href="<?php echo BASE_URL; ?>/blog">Blog</a>
-                <a href="<?php echo BASE_URL; ?>/iletisim">İletişim</a>
+                <a href="<?php echo BASE_URL; ?>"><i class="fas fa-home" style="margin-right: 5px;"></i> Anasayfa</a>
+                <a href="<?php echo BASE_URL; ?>/hakkimda"><i class="fas fa-user" style="margin-right: 5px;"></i> Hakkımda</a>
+                <a href="<?php echo BASE_URL; ?>/uzmanlik-alanlari"><i class="fas fa-star" style="margin-right: 5px;"></i> Uzmanlık Alanlarım</a>
+                <a href="<?php echo BASE_URL; ?>/hizmetler"><i class="fas fa-briefcase" style="margin-right: 5px;"></i> Hizmetler</a>
+                <a href="<?php echo BASE_URL; ?>/blog"><i class="fas fa-pen-nib" style="margin-right: 5px;"></i> Blog</a>
+                <a href="<?php echo BASE_URL; ?>/iletisim"><i class="fas fa-envelope" style="margin-right: 5px;"></i> İletişim</a>
                 <a href="https://wa.me/905307200396" target="_blank" class="btn btn-primary" style="display: none !important;">Online Terapi</a>
             </div>
         </div>

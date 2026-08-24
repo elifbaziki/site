@@ -925,18 +925,15 @@ body.page-specialties .card p {
   .hover-details p, 
   .hover-details ul, 
   .hover-details .quote-box {
-    display: none; 
+    display: block; 
   }
   
   /* Show only the buttons */
   .split-left .desktop-btn, .split-right .desktop-btn {
-    display: none !important;
+    display: inline-block !important;
   }
   .split-left .mobile-btn, .split-right .mobile-btn {
-    display: inline-block !important;
-    margin-top: 1rem;
-    padding: 0.6rem 1.4rem;
-    font-size: 0.85rem;
+    display: none !important;
   }
 
   /* Prevent any hover expansions on mobile */
@@ -946,7 +943,7 @@ body.page-specialties .card p {
   }
 
   #ben-kimim {
-    display: none; /* Hide Ben Kimim on mobile */
+    display: block; /* Show Ben Kimim on mobile */
   }
   .mobile-services-section {
     display: block; /* Show grids on mobile */
@@ -962,12 +959,15 @@ body.page-specialties .card p {
     flex-direction: column;
     padding: 2rem;
     box-shadow: var(--shadow-md);
-    transform: translateY(-150%);
-    transition: var(--transition);
-    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
   }
   
   .nav-links.active {
+    opacity: 1;
+    visibility: visible;
     transform: translateY(0);
   }
   
@@ -976,7 +976,7 @@ body.page-specialties .card p {
   }
   
   .hide-on-mobile {
-    display: none !important;
+    display: block !important;
   }
   
   .about-section, .contact-section {
@@ -1026,8 +1026,10 @@ body.page-specialties .card p {
   transform: scale(1.05) translateX(10px);
   z-index: 3;
 }
-@media (max-width: 991px) {
-  .about-collage {
-    display: none !important; /* Mobil versiyonda fotoğrafları kaldırıyoruz */
+  @media (max-width: 991px) {
+    .about-collage {
+      display: block !important; 
+      height: 300px;
+      margin-bottom: 2rem;
+    }
   }
-}

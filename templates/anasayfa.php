@@ -6,7 +6,7 @@
         <!-- Left Side: Performance Coaching -->
         <div class="split-panel split-left">
             <div class="content-wrapper" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-                <h2 style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px;">MENTAL <span class="highlight" style="font-family: 'Syne', sans-serif; font-size: 1.03em;">PERFORMANS</span></h2>
+                <h2 style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; line-height: 1; margin-bottom: 0.5rem;"><span>MENTAL</span> <span class="highlight" style="font-family: 'Syne', sans-serif; font-size: 1.03em;">PERFORMANS</span></h2>
                 <p class="sub-header">Sporcular, Performans Sanatçıları, Liderler, Öğrenciler</p>
                 
                 <div class="hover-details">
@@ -34,7 +34,7 @@
         <!-- Right Side: Clinical Psychology -->
         <div class="split-panel split-right">
             <div class="content-wrapper" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-                <h2 style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; line-height: 1; margin-bottom: 0.5rem;"><span class="highlight">Klinik</span> <span class="highlight">Psikoloji</span></h2>
+                <h2 style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; line-height: 1; margin-bottom: 0.5rem;"><span class="highlight">Klinik</span> <span class="highlight">Psikoloji</span></h2>
                 <p class="sub-header">Genç Yetişkinler, Yetişkinler ve Kurumlar İçin</p>
                 
                 <div class="hover-details">

@@ -5,14 +5,14 @@
         
         <!-- Left Side: Performance Coaching -->
         <div class="split-panel split-left">
-            <div class="content-wrapper" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-                <h2 style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; line-height: 1; margin-bottom: 0.5rem;"><span>MENTAL</span> <span class="highlight" style="font-family: 'Syne', sans-serif; font-size: 1.03em;">PERFORMANS</span></h2>
+            <div class="content-wrapper">
+                <h2>MENTAL <br><span class="highlight" style="font-family: 'Syne', sans-serif; font-size: 1.03em;">PERFORMANS</span></h2>
                 <p class="sub-header">Sporcular, Performans Sanatçıları, Liderler, Öğrenciler</p>
                 
                 <div class="hover-details">
                     <p style="color: #cbd5e1; font-size: 1.1rem; margin-bottom: 1.5rem;">Motorsporları, Performans Sanatçıları, Dikkat Eksikliği ve Hiperaktivite Bozukluğu, İş dünyası Profesyonelleri ve sınav dönemindeki Öğrenciler için optimal performansa erişim..</p>
-                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; margin-top: 1.5rem; margin-bottom: 1rem; text-align: center;">
-                        <ul style="margin: 0 auto; text-align: left; list-style-position: inside; padding: 0; transform: translateY(-20%); width: max-content;">
+                    <div style="display: flex; align-items: center; justify-content: flex-start; gap: 18rem; margin-top: 1.5rem; margin-bottom: 1rem;">
+                        <ul style="margin: 0;">
                             <li><i class="fas fa-bolt"></i> Yüksek Performans Koçluğu</li>
                             <li><i class="fas fa-brain"></i> Beyin Antrenmanları</li>
                             <li><i class="fas fa-fire"></i> Peak (Yüksek) Performans</li>
@@ -33,14 +33,14 @@
 
         <!-- Right Side: Clinical Psychology -->
         <div class="split-panel split-right">
-            <div class="content-wrapper" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
-                <h2 style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; line-height: 1; margin-bottom: 0.5rem;"><span class="highlight">Klinik</span> <span class="highlight">Psikoloji</span></h2>
+            <div class="content-wrapper">
+                <h2 style="line-height: 0.65; margin-bottom: 1rem;"><span class="highlight">Klinik</span> <br><span class="highlight">Psikoloji</span></h2>
                 <p class="sub-header">Genç Yetişkinler, Yetişkinler ve Kurumlar İçin</p>
                 
                 <div class="hover-details">
                     <p style="color: var(--primary-color); font-size: 1.1rem; margin-bottom: 1.5rem;">İçsel denge, güvenli bağlar kurma ve derin psikolojik iyi oluş üzerine şefkatli bir yolculuk.</p>
-                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; margin-top: 1.5rem; margin-bottom: 1rem; text-align: center;">
-                        <ul style="margin: 0 auto; text-align: left; list-style-position: inside; padding: 0; width: max-content;">
+                    <div style="display: flex; align-items: center; justify-content: flex-start; gap: 18rem; margin-top: 1.5rem; margin-bottom: 1rem;">
+                        <ul style="margin: 0;">
                             <li><i class="fas fa-leaf"></i> Bireysel Psikoterapi</li>
                             <li><i class="fas fa-hands-helping"></i> Genç Yetişkin Terapisi</li>
                             <li><i class="fas fa-building"></i> Kurumsal Psikolojik İyi Oluş</li>

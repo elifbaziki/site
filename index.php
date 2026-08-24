@@ -36,7 +36,18 @@ if ($route == '' || $route == 'anasayfa' || $route == 'index') {
 }
 
 // Global variables for templates
-$site_title = get_setting($db, 'site_title', 'Elif Baziki | Psikolog & Mental Performans Koçu');
+$site_title = 'Elif Baziki Resmi Web Sitesi';
+if ($page == 'anasayfa.php') {
+    $site_title = 'Anasayfa | Elif Baziki Resmi Web Sitesi';
+} elseif ($page == 'blog-liste.php') {
+    $site_title = 'Blog | Elif Baziki Resmi Web Sitesi';
+} elseif (in_array($route, $allowed_pages)) {
+    $title_part = ucfirst(str_replace('-', ' ', $route));
+    if ($route == 'hakkimda') $title_part = 'Hakkımda';
+    if ($route == 'iletisim') $title_part = 'İletişim';
+    if ($route == 'uzmanlik-alanlari') $title_part = 'Uzmanlık Alanları';
+    $site_title = $title_part . ' | Elif Baziki Resmi Web Sitesi';
+}
 $meta_description = get_setting($db, 'meta_description', 'Elif Baziki - Mental Performans Koçluğu ve Psikolojik Danışmanlık');
 
 // Include the template

@@ -1,6 +1,6 @@
 <?php 
 // $post is injected by index.php
-$site_title = htmlspecialchars($post['title']) . ' | ' . get_setting($db, 'site_title');
+$site_title = htmlspecialchars($post['title']) . ' | Elif Baziki Resmi Web Sitesi';
 $meta_description = htmlspecialchars($post['meta_description']);
 $meta_keywords = htmlspecialchars($post['keywords']);
 $og_image = $post['featured_image'];

@@ -9,7 +9,8 @@ if (!$test) {
     exit;
 }
 
-$site_title = htmlspecialchars($test['title']) . ' | ' . get_setting($db, 'site_title');
+$site_title = htmlspecialchars($test['title']) . ' | Elif Baziki Resmi Web Sitesi';
+
 require_once BASE_PATH . '/includes/header.php'; 
 
 // Fetch Questions

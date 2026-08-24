@@ -19,7 +19,10 @@ foreach($links_raw as $l) {
             
             <!-- Column 1: Logo and Text -->
             <div class="footer-brand">
-                <a href="<?php echo BASE_URL; ?>" class="logo">ELİF BAZİKİ</a>
+                <a href="<?php echo BASE_URL; ?>" class="logo" style="display:flex; flex-direction:column; line-height:1.2; color: #fff;">
+                    Elif Baziki
+                    <span style="font-size: 0.65rem; font-weight: 600; color: #bbb; letter-spacing: 2px; text-transform: uppercase;">PSİKOLOG & MENTAL PERFORMANS KOÇU</span>
+                </a>
                 <p>Sporcular, liderler ve profesyoneller için yüksek performans koçluğu ve psikolojik danışmanlık.</p>
                 <div class="social-links" style="margin-top: 15px;">
                     <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -30,7 +33,7 @@ foreach($links_raw as $l) {
             
             <!-- Column 2: Kurumsal -->
             <div class="footer-links">
-                <h3>Kurumsal</h3>
+                <h3 style="color: #94a3b8; font-weight: 600;">Kurumsal</h3>
                 <ul style="list-style: none; padding: 0; margin: 0;">
                     <?php foreach($footer_data['kurumsal'] as $l): ?>
                         <li style="margin-bottom: 10px;"><a href="<?php echo BASE_URL . $l['link_url']; ?>" style="color: #ccc; text-decoration: none;"><?php echo htmlspecialchars($l['link_title']); ?></a></li>
@@ -44,7 +47,7 @@ foreach($links_raw as $l) {
             
             <!-- Column 3: Yasal Mevzuatlar -->
             <div class="footer-links">
-                <h3>Yasal Mevzuatlar</h3>
+                <h3 style="color: #94a3b8; font-weight: 600;">Yasal Mevzuatlar</h3>
                 <ul style="list-style: none; padding: 0; margin: 0;">
                     <?php foreach($footer_data['yasal'] as $l): ?>
                         <li style="margin-bottom: 10px;"><a href="<?php echo BASE_URL . $l['link_url']; ?>" style="color: #ccc; text-decoration: none;"><?php echo htmlspecialchars($l['link_title']); ?></a></li>
@@ -58,13 +61,13 @@ foreach($links_raw as $l) {
 
             <!-- Column 4: Hızlı Erişim -->
             <div class="footer-links">
-                <h3>Hızlı Erişim</h3>
+                <h3 style="color: #94a3b8; font-weight: 600;">Hızlı Erişim</h3>
                 <ul style="list-style: none; padding: 0; margin: 0;">
                     <?php foreach($footer_data['hizli_erisim'] as $l): ?>
                         <li style="margin-bottom: 10px;"><a href="<?php echo BASE_URL . $l['link_url']; ?>" style="color: #ccc; text-decoration: none;"><?php echo htmlspecialchars($l['link_title']); ?></a></li>
                     <?php endforeach; ?>
                     <?php if(empty($footer_data['hizli_erisim'])): ?>
-                        <li style="margin-bottom: 10px;"><a href="<?php echo BASE_URL; ?>/blog" style="color: #ccc; text-decoration: none;">Blog</a></li>
+                        <li style="margin-bottom: 10px;"><a href="<?php echo BASE_URL; ?>/blog" style="color: #ccc; text-decoration: none;">Blog & Makaleler</a></li>
                         <li style="margin-bottom: 10px;"><a href="<?php echo BASE_URL; ?>/iletisim" style="color: #ccc; text-decoration: none;">İletişim</a></li>
                     <?php endif; ?>
                 </ul>

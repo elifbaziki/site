@@ -50,15 +50,15 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="<?php echo BASE_URL; ?>" class="logo">ELİF BAZİKİ</a>
+            <a href="<?php echo BASE_URL; ?>" class="logo" style="display:flex; flex-direction:column; line-height:1.2;">
+                Elif Baziki
+                <span style="font-size: 0.65rem; font-weight: 600; color: #777; letter-spacing: 2px; text-transform: uppercase;">PSİKOLOG & MENTAL PERFORMANS KOÇU</span>
+            </a>
             
             <button class="mobile-menu-btn" aria-label="Menü">
                 <svg width="28" height="10" viewBox="0 0 28 10" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="28" height="1.5" fill="currentColor"/><rect y="8.5" width="28" height="1.5" fill="currentColor"/></svg>
             </button>
             <div class="nav-links">
-                <button class="mobile-close-btn" aria-label="Kapat">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                </button>
                 <a href="<?php echo BASE_URL; ?>">Anasayfa</a>
                 <a href="<?php echo BASE_URL; ?>/hakkimda">Hakkında</a>
                 <a href="<?php echo BASE_URL; ?>/uzmanlik-alanlari" class="hide-on-mobile">Uzmanlık Alanlarım</a>

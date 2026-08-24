@@ -10,40 +10,37 @@ require_once BASE_PATH . '/includes/header.php';
     </div>
 </section>
 
-<section class="blog-list" style="padding: 80px 0;">
+<section class="section">
     <div class="container">
-        <div class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;">
+        
+        <!-- Category Filter (Static Example) -->
+        <div style="display: flex; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; justify-content: center;">
+            <a href="#" class="btn-main" style="background: var(--primary-color); color: var(--white); padding: 0.5rem 1.5rem;">Tümü</a>
+            <a href="#" class="btn-main" style="background: transparent; color: var(--text-dark); border-color: #ddd; padding: 0.5rem 1.5rem;">Performans Psikolojisi</a>
+            <a href="#" class="btn-main" style="background: transparent; color: var(--text-dark); border-color: #ddd; padding: 0.5rem 1.5rem;">Bilişsel Antrenman</a>
+            <a href="#" class="btn-main" style="background: transparent; color: var(--text-dark); border-color: #ddd; padding: 0.5rem 1.5rem;">DEHB (ADHD)</a>
+        </div>
+
+        <div class="specialties-grid">
             <?php 
             $posts = get_all_posts($db);
             foreach($posts as $post): 
+                $img = $post['featured_image'] ? htmlspecialchars($post['featured_image']) : BASE_URL . '/assets/images/default-blog.jpg';
+                $cat = $post['keywords'] ? htmlspecialchars($post['keywords']) : 'Genel';
             ?>
-            <article class="blog-card" style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease;">
-                <?php if($post['featured_image']): ?>
-                <div class="blog-image" style="height: 200px; overflow: hidden;">
-                    <a href="<?php echo BASE_URL; ?>/blog/<?php echo $post['slug']; ?>">
-                        <img src="<?php echo htmlspecialchars($post['featured_image']); ?>" alt="<?php echo htmlspecialchars($post['title']); ?>" style="width: 100%; height: 100%; object-fit: cover;">
-                    </a>
+            <div class="card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+                <div style="height: 200px; background-image: url('<?php echo $img; ?>'); background-size: cover; background-position: center;"></div>
+                <div style="padding: 2rem; flex: 1; display: flex; flex-direction: column;">
+                    <span style="color: var(--accent); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem;"><?php echo $cat; ?></span>
+                    <h3 style="margin-bottom: 1rem;"><a href="<?php echo BASE_URL; ?>/blog/<?php echo $post['slug']; ?>"><?php echo htmlspecialchars($post['title']); ?></a></h3>
+                    <p style="margin-bottom: 1.5rem; flex: 1;"><?php echo htmlspecialchars($post['meta_description']); ?></p>
+                    <a href="<?php echo BASE_URL; ?>/blog/<?php echo $post['slug']; ?>" style="color: var(--primary-color); font-weight: 600; font-size: 0.9rem;">Devamını Oku &rarr;</a>
                 </div>
-                <?php endif; ?>
-                <div class="blog-content" style="padding: 25px;">
-                    <div class="blog-meta" style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">
-                        <i class="far fa-calendar-alt"></i> <?php echo date('d.m.Y', strtotime($post['created_at'])); ?>
-                    </div>
-                    <h2 style="font-size: 1.3rem; margin-bottom: 15px;">
-                        <a href="<?php echo BASE_URL; ?>/blog/<?php echo $post['slug']; ?>" style="color: var(--primary-color); text-decoration: none;">
-                            <?php echo htmlspecialchars($post['title']); ?>
-                        </a>
-                    </h2>
-                    <p style="color: #555; line-height: 1.6; margin-bottom: 20px;">
-                        <?php echo htmlspecialchars(mb_substr($post['meta_description'], 0, 120)) . '...'; ?>
-                    </p>
-                    <a href="<?php echo BASE_URL; ?>/blog/<?php echo $post['slug']; ?>" class="read-more" style="color: var(--accent-color); font-weight: 600; text-decoration: none;">Devamını Oku <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
+            </div>
             <?php endforeach; ?>
             
             <?php if(empty($posts)): ?>
-                <p>Henüz blog yazısı bulunmamaktadır.</p>
+                <p style="text-align: center; width: 100%;">Henüz blog yazısı bulunmamaktadır.</p>
             <?php endif; ?>
         </div>
     </div>

@@ -5,24 +5,24 @@ require_once 'includes/functions.php';
 $route = isset($_GET['route']) ? rtrim($_GET['route'], '/') : '';
 
 // Simple Router
-if ($route == '' || $route == 'home' || $route == 'index') {
-    $page = 'home.php';
+if ($route == '' || $route == 'anasayfa' || $route == 'index') {
+    $page = 'anasayfa.php';
 } elseif ($route == 'admin' || strpos($route, 'admin/') === 0) {
-    // Admin routing handled directly by accessing the /admin directory
-    // But if somehow it passes here, redirect to /admin/
     header('Location: ' . BASE_URL . '/admin/');
     exit;
 } elseif ($route == 'blog') {
-    $page = 'blog-list.php';
+    $page = 'blog-liste.php';
 } elseif (preg_match('#^blog/(.+)$#', $route, $matches)) {
-    // Blog Single
     $slug = $matches[1];
     $post = get_post_by_slug($db, $slug);
     if ($post) {
-        $page = 'blog-single.php';
+        $page = 'blog-detay.php';
     } else {
         $page = '404.php';
     }
+} elseif (preg_match('#^test/(.+)$#', $route, $matches)) {
+    $slug = $matches[1];
+    $page = 'test-detay.php';
 } else {
     // Check if it's a known static page
     $allowed_pages = ['hakkimda', 'hizmetler', 'iletisim', 'uzmanlik-alanlari'];

@@ -39,6 +39,47 @@ function initDB($db) {
         created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
         updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
     )");
+
+    $db->exec("CREATE TABLE IF NOT EXISTS footer_links (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        column_name TEXT,
+        link_title TEXT,
+        link_url TEXT,
+        sort_order INTEGER DEFAULT 0
+    )");
+
+    $db->exec("CREATE TABLE IF NOT EXISTS tests (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        slug TEXT UNIQUE,
+        title TEXT,
+        description TEXT,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    )");
+
+    $db->exec("CREATE TABLE IF NOT EXISTS test_questions (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        test_id INTEGER,
+        question_text TEXT,
+        sort_order INTEGER DEFAULT 0,
+        FOREIGN KEY(test_id) REFERENCES tests(id) ON DELETE CASCADE
+    )");
+
+    $db->exec("CREATE TABLE IF NOT EXISTS test_options (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        question_id INTEGER,
+        option_text TEXT,
+        score INTEGER DEFAULT 0,
+        FOREIGN KEY(question_id) REFERENCES test_questions(id) ON DELETE CASCADE
+    )");
+
+    $db->exec("CREATE TABLE IF NOT EXISTS test_results (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        test_id INTEGER,
+        min_score INTEGER,
+        max_score INTEGER,
+        result_text TEXT,
+        FOREIGN KEY(test_id) REFERENCES tests(id) ON DELETE CASCADE
+    )");
 }
 
 // Initialize tables

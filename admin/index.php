@@ -133,10 +133,26 @@ if ($action == 'settings' && $_SERVER['REQUEST_METHOD'] == 'POST') {
 <div class="content">
     <?php if(isset($success)): ?><div class="alert"><?php echo $success; ?></div><?php endif; ?>
 
-    <?php if($action == 'dashboard'): ?>
+    <?php if($action == 'dashboard'): 
+        $post_count = $db->query("SELECT count(*) FROM blog_posts")->fetchColumn();
+        $test_count = $db->query("SELECT count(*) FROM tests")->fetchColumn();
+    ?>
         <h1>Hoş Geldiniz, Elif Hanım</h1>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
+            <div class="card" style="text-align: center; margin-bottom: 0;">
+                <h3 style="margin-top:0; color: #666;">Toplam Blog Yazısı</h3>
+                <div style="font-size: 3rem; font-weight: bold; color: var(--primary-color, #1a365d);"><?php echo $post_count; ?></div>
+                <a href="blog-manager.php" class="btn" style="margin-top:15px;">Yazıları Yönet</a>
+            </div>
+            <div class="card" style="text-align: center; margin-bottom: 0;">
+                <h3 style="margin-top:0; color: #666;">Aktif Psikoloji Testleri</h3>
+                <div style="font-size: 3rem; font-weight: bold; color: var(--primary-color, #1a365d);"><?php echo $test_count; ?></div>
+                <a href="test-manager.php" class="btn" style="margin-top:15px;">Testleri Yönet</a>
+            </div>
+        </div>
+        
         <div class="card">
-            <p>Sol menüden blog yazılarınızı yönetebilir veya sitenizin temel SEO ayarlarını değiştirebilirsiniz.</p>
+            <p>Sol menüden içeriklerinizi, footer linklerinizi veya site temel SEO ayarlarınızı değiştirebilirsiniz.</p>
         </div>
     <?php elseif($action == 'settings'): ?>
         <h1>Site SEO Ayarları</h1>

@@ -1,0 +1,1026 @@
+/* style.css - Elif Baziki Psychology Website - Refined Layout */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@500;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Cinzel:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Default Website Palette (Neon & Navy for Homepage) */
+  --primary-color: #1A365D; /* Navy Blue */
+  --lavender: #E6E6FA;
+  --lavender-dark: #967BB6;
+  --clinical-bg: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+  
+  /* Performance / Neon Colors */
+  --neon-orange: #FF4500;
+  --neon-pink: #FF007F;
+  --perf-bg: radial-gradient(circle at center, #1a1a2e 0%, #000000 100%);
+  
+  --text-dark: #1E293B;
+  --text-light: #64748B;
+  --white: #ffffff;
+
+  --live-color: #e63946; 
+  
+  --font-main: 'Plus Jakarta Sans', sans-serif;
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-clinical: 'Cinzel', serif; 
+  --font-logo: 'Montserrat', sans-serif; 
+  
+  --transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+  --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
+  --shadow-md: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+/* =========================================
+   SPECIALTIES PAGE OVERRIDES (Bio-Performance)
+   ========================================= */
+body.page-specialties {
+  --clinical-bg: #FFFFFF; /* Pure modern white */
+  --text-dark: #111827;
+  --text-light: #6B7280;
+  
+  --font-heading: var(--font-main); 
+  background: var(--clinical-bg);
+}
+
+/* Modern Striking Cards for Specialties */
+body.page-specialties .card {
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.02);
+  padding: 2.5rem;
+  border-radius: 12px;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.page-specialties .card:hover {
+  transform: translateY(-6px);
+  border-bottom: 3px solid var(--secondary-color);
+  box-shadow: 0 15px 35px rgba(244, 63, 94, 0.1); /* Subtle rose shadow */
+}
+
+/* Compact Scaling for Information Density */
+body.page-specialties {
+  font-size: 0.92rem; 
+}
+
+body.page-specialties .section {
+  padding: 3rem 0; /* Reduced global padding */
+}
+
+body.page-specialties h2.section-title {
+  font-size: 2.2rem;
+}
+
+body.page-specialties .hero {
+  min-height: 200px !important;
+  height: 28vh !important;
+}
+
+body.page-specialties .hero-content h1 {
+  font-size: 2.5rem !important;
+}
+
+body.page-specialties .card {
+  padding: 1.6rem; /* Tighter padding */
+}
+
+body.page-specialties .card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+}
+
+body.page-specialties .card p {
+  font-size: 0.9rem;
+}
+
+body.page-specialties .target-list {
+  gap: 0.4rem;
+}
+
+body.page-specialties .target-list-item {
+  padding: 0.2rem 0;
+}
+
+/* Custom Depth White Icon Wrapper */
+body.page-specialties .target-list-item .icon-wrapper {
+  background: #FFFFFF;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05), inset 0 2px 0 rgba(255, 255, 255, 1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: #ffffff;
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.5rem 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  transition: var(--transition);
+}
+
+.navbar.scrolled {
+  padding: 1rem 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-logo);
+  font-size: 1.4rem;
+  font-weight: 400; /* Thinner, sleeker bridge font */
+  color: var(--primary-color);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-dark);
+  padding: 0.5rem;
+}
+
+.btn-online {
+  display: none !important; /* Temporarily hidden per user request */
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--primary-color);
+  color: var(--white) !important;
+  padding: 0.6rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-online:hover {
+  background-color: var(--lavender-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.live-icon {
+  width: 8px;
+  height: 8px;
+  background-color: var(--live-color);
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(230, 57, 70, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(230, 57, 70, 0); }
+}
+
+/* -----------------------------
+   DIAGONAL SPLIT SCREEN HERO
+------------------------------ */
+.split-hero {
+  position: relative;
+  width: 100%;
+  height: 85vh; /* Reduced from 100vh to reveal the section below */
+  overflow: hidden;
+  background: #000;
+}
+
+.split-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: clip-path 0.8s cubic-bezier(0.25, 1, 0.5, 1), z-index 0s;
+  padding-top: 80px; /* offset navbar */
+}
+
+/* Base Content Styling for perfect centering */
+.content-wrapper {
+  position: absolute;
+  top: 18%;
+  width: max-content; /* Only as wide as the text, prevents invisible boundary clipping */
+  max-width: 90vw;
+  padding: 2rem;
+  text-align: center;
+  transition: left 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), top 0s;
+}
+
+.hover-details {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  max-height: 0;
+  overflow: hidden;
+}
+
+.hover-details ul {
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.hover-details li {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Left Panel: Performance Coaching (Dark & Neon) */
+.split-left {
+  background-image: linear-gradient(135deg, rgba(26, 26, 46, 0.65) 0%, rgba(0, 0, 0, 0.85) 100%), url('../images/mental-performans-hero.jpg');
+  background-size: 116%;
+  background-position: 0% 19%;
+  color: var(--white);
+  z-index: 2; 
+  /* Less aggressive diagonal cut */
+  clip-path: polygon(0 0, 58% 0, 42% 100%, 0 100%);
+}
+
+.split-left .content-wrapper {
+  /* Brought closer to the center line for better readability */
+  left: 28%;
+  transform: translateX(-50%);
+}
+
+.split-left h2 {
+  font-family: var(--font-heading);
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 3.5rem; 
+  letter-spacing: -1px;
+  line-height: 1.1;
+  white-space: nowrap; 
+}
+
+.split-left .highlight {
+  display: block; 
+  transform: none; 
+  background: linear-gradient(90deg, var(--neon-orange), var(--neon-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  font-size: 0.8em; /* Kept compact to fit safe zone */
+  letter-spacing: 4px; 
+}
+
+.sub-header {
+  font-family: var(--font-main);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+.split-left .sub-header {
+  color: #cbd5e1;
+}
+
+.split-right .sub-header {
+  color: var(--primary-color);
+}
+
+.quote-box {
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  border-left: 3px solid var(--neon-orange);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  border-radius: 0 10px 10px 0;
+  text-align: left;
+  font-family: var(--font-main);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.split-right .quote-box {
+  border-left: 3px solid var(--lavender-dark);
+  background: rgba(26, 54, 93, 0.03);
+  color: var(--primary-color);
+}
+
+.quote-box span {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.split-left i {
+  color: var(--neon-pink);
+}
+
+.split-left .btn-main {
+  background: transparent;
+  border: 2px solid var(--neon-orange);
+  color: var(--neon-orange);
+  margin-top: 2rem;
+  box-shadow: 0 0 15px rgba(255, 69, 0, 0.3);
+}
+
+.split-left .btn-main:hover {
+  background: var(--neon-orange);
+  color: #000;
+  box-shadow: 0 0 25px rgba(255, 69, 0, 0.6);
+}
+
+/* Right Panel: Clinical Psychology (Fresh & Navy/Lavender) */
+.split-right {
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.55) 0%, rgba(240, 244, 248, 0.80) 100%), url('../images/therapy_room_warm.jpg');
+  background-size: cover;
+  background-position: center;
+  color: var(--primary-color);
+  z-index: 1; 
+  clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%); 
+}
+
+.split-right .content-wrapper {
+  /* Perfectly mirroring the left side (brought closer to center) */
+  left: 72%;
+  transform: translateX(-50%);
+}
+
+.split-right h2 {
+  font-family: var(--font-clinical);
+  font-weight: 800; 
+  text-transform: uppercase; 
+  color: var(--primary-color);
+  font-size: 4rem; 
+  letter-spacing: 6px; 
+  line-height: 1.2;
+  white-space: nowrap; /* Forces text to stay on one line */
+}
+
+.split-right .highlight {
+  color: var(--primary-color); /* Changed to Navy Blue (Lacivert) */
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.45em; /* Increased size back to a strong medium-large scale */
+  letter-spacing: 0;
+  text-transform: capitalize; 
+  display: block; /* Forces it to perfectly center on its own line */
+  transform: none; /* Removed manual shift to let the browser center it mathematically */
+}
+
+.split-right p {
+  font-family: var(--font-main);
+}
+
+.split-right i {
+  color: var(--primary-color);
+}
+
+.split-right .btn-main {
+  background: var(--primary-color);
+  color: var(--white);
+  border: 2px solid var(--primary-color);
+  margin-top: 2rem;
+}
+
+.split-right .btn-main:hover {
+  background: var(--lavender-dark);
+  border-color: var(--lavender-dark);
+}
+
+/* --- Hover Interactions (The Magic) --- */
+/* Left side expand */
+.split-hero:has(.split-left:hover) .split-left {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  z-index: 10;
+}
+.split-hero:has(.split-left:hover) .split-left .content-wrapper {
+  left: 50%; /* Move to absolute center when expanded */
+}
+.split-hero:has(.split-left:hover) .split-left .hover-details {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 1200px !important;
+}
+
+/* Right side expand */
+.split-hero:has(.split-right:hover) .split-right {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  z-index: 10;
+}
+.split-hero:has(.split-right:hover) .split-right .content-wrapper {
+  left: 50%; /* Move to absolute center when expanded */
+}
+.split-hero:has(.split-right:hover) .split-right .hover-details {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 1200px !important;
+}
+
+/* Mobile vs Desktop Buttons & Sections */
+.desktop-btn {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+.mobile-btn {
+  display: none !important;
+}
+.mobile-services-section {
+  display: none;
+}
+
+/* Apple-style Modern Cards (Used in Hizmetler) */
+.apple-card {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  padding: 3.5rem 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  position: relative;
+  overflow: hidden;
+}
+.apple-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 100%);
+  pointer-events: none;
+}
+.apple-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12), 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+.apple-card h3 {
+  color: #000000 !important;
+  font-weight: 900 !important;
+  opacity: 1 !important;
+}
+.apple-card h3 i {
+  color: #000000 !important;
+  opacity: 1 !important;
+}
+
+/* Colored Shadows for Cards */
+.shadow-pink {
+  box-shadow: 0 12px 35px rgba(236, 72, 153, 0.15), 0 4px 12px rgba(236, 72, 153, 0.08) !important;
+}
+.shadow-pink:hover {
+  box-shadow: 0 25px 50px rgba(236, 72, 153, 0.25), 0 8px 20px rgba(236, 72, 153, 0.12) !important;
+}
+
+.shadow-navy {
+  box-shadow: 0 12px 35px rgba(30, 58, 138, 0.15), 0 4px 12px rgba(30, 58, 138, 0.08) !important;
+}
+.shadow-navy:hover {
+  box-shadow: 0 25px 50px rgba(30, 58, 138, 0.25), 0 8px 20px rgba(30, 58, 138, 0.12) !important;
+}
+
+.shadow-brown {
+  box-shadow: 0 12px 35px rgba(120, 53, 15, 0.15), 0 4px 12px rgba(120, 53, 15, 0.08) !important;
+}
+.shadow-brown:hover {
+  box-shadow: 0 25px 50px rgba(120, 53, 15, 0.25), 0 8px 20px rgba(120, 53, 15, 0.12) !important;
+}
+
+.shadow-purple {
+  box-shadow: 0 12px 35px rgba(147, 51, 234, 0.15), 0 4px 12px rgba(147, 51, 234, 0.08) !important;
+}
+.shadow-purple:hover {
+  box-shadow: 0 25px 50px rgba(147, 51, 234, 0.25), 0 8px 20px rgba(147, 51, 234, 0.12) !important;
+}
+
+.shadow-cyan {
+  box-shadow: 0 12px 35px rgba(8, 145, 178, 0.15), 0 4px 12px rgba(8, 145, 178, 0.08) !important;
+}
+.shadow-cyan:hover {
+  box-shadow: 0 25px 50px rgba(8, 145, 178, 0.25), 0 8px 20px rgba(8, 145, 178, 0.12) !important;
+}
+
+/* Match mobile services typography and cards with specialties page */
+.mobile-services-section h2.section-title {
+  font-family: var(--font-main) !important;
+  letter-spacing: -0.5px !important;
+}
+.mobile-services-section .card {
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  border: none;
+  border-top: 3px solid var(--primary-color);
+}
+.mobile-services-section .card h3 {
+  font-family: var(--font-main) !important;
+  font-size: 1.15rem !important;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.2px !important;
+}
+
+/* General Sections */
+.section {
+  padding: 6rem 0;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  color: var(--primary-color);
+  letter-spacing: -1px;
+}
+
+.btn-main {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: var(--font-main);
+}
+
+/* Specialties Grid */
+.specialties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border: 1px solid rgba(0,0,0,0.03);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-md);
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.card p {
+  font-size: 1rem;
+  color: var(--text-light); 
+  line-height: 1.6;
+}
+
+/* =========================================
+   TARGET AUDIENCE (Specialties Page)
+   ========================================= */
+.target-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.target-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+}
+
+.target-list-item:last-child {
+  border-bottom: none;
+}
+
+.target-list-item .icon-wrapper {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.target-list-item .icon-wrapper i {
+  font-size: 1.1rem;
+  color: var(--neon-pink);
+}
+
+.target-list-item p {
+  margin: 0;
+  color: #000000; /* Pure black */
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.target-list-item p strong {
+  color: var(--primary-color);
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  margin-right: 0.4rem;
+  letter-spacing: -0.2px;
+}
+
+/* Footer */
+.footer {
+  background-color: #0F172A; /* Deep dark blue for global footer */
+  color: var(--white);
+  padding: 2rem 0 1rem;
+}
+
+/* =========================================
+   SPECIALTIES PAGE UI OVERRIDES
+   ========================================= */
+body.page-specialties h1, 
+body.page-specialties h2, 
+body.page-specialties h3, 
+body.page-specialties h4, 
+body.page-specialties h5, 
+body.page-specialties h6 {
+  color: var(--primary-color);
+  letter-spacing: -0.5px;
+}
+
+body.page-specialties .card {
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+  border: none;
+  border-top: 3px solid var(--primary-color);
+}
+
+body.page-specialties .card:hover {
+  transform: translateY(-5px);
+  border-top-color: var(--neon-orange);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+body.page-specialties .card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.2px;
+}
+
+body.page-specialties .card p {
+  font-size: 0.95rem;
+  color: var(--text-light); 
+  line-height: 1.5;
+}
+
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-col h4 {
+  color: var(--lavender) !important;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-main) !important;
+  letter-spacing: normal;
+}
+
+.footer-col p, .footer-col a {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.footer-col a:hover {
+  color: var(--white);
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  color: var(--white);
+  transition: var(--transition);
+}
+
+.social-icons a:hover {
+  background: var(--neon-pink);
+  transform: translateY(-3px);
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .split-hero {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: auto;
+    margin-top: 80px; /* Navbar'ın altında kalmaması için boşluk */
+    background: transparent; /* Siyah arkaplanı kaldırıyoruz */
+  }
+  
+  .split-panel {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 35vh; /* İçerik taşmasını engellemek için esnek yükseklik */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    clip-path: none !important; /* Remove diagonal cut on mobile */
+  }
+  
+  .hero {
+    min-height: auto !important;
+    height: 35vh !important; /* Uzmanlık Alanları banner daraltıldı */
+  }
+
+  body, p, li, .target-list-item p {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  h1 {
+    font-size: 1.8rem !important;
+  }
+  
+  h3 {
+    font-size: 1.2rem !important;
+  }
+
+  .target-list-item {
+    padding: 1rem !important;
+    margin-bottom: 0.8rem !important;
+  }
+  
+  .target-list-item .icon-wrapper {
+    width: 32px !important;
+    height: 32px !important;
+    margin-right: 10px !important;
+  }
+  
+  .target-list-item .icon-wrapper i {
+    font-size: 0.9rem !important;
+  }
+  
+  .specialties-grid {
+    margin-bottom: 0 !important;
+  }
+  
+  #klinik-psikoloji {
+    padding-top: 0 !important;
+    margin-top: -1rem !important;
+  }
+  
+  #klinik-psikoloji .section-title {
+    margin-top: -2rem !important;
+  }
+  
+  .section-title {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .split-left h2, .split-right h2 {
+    font-size: 1.3rem !important; /* Daha küçük başlık */
+    letter-spacing: 1px !important; /* Taşmayı engellemek için */
+    white-space: normal !important; /* Yazının alt satıra geçmesine izin ver */
+    line-height: 1.2;
+    margin-bottom: 0.2rem;
+  }
+  
+  .split-left .highlight, .split-right .highlight {
+    font-size: 1em !important;
+    letter-spacing: 0px !important;
+  }
+  
+  .sub-header {
+    font-size: 0.85rem !important; /* Alt başlığı da mobilde biraz daralttık */
+    padding: 0 1rem;
+    margin-bottom: 0 !important;
+  }
+  
+  .split-left .content-wrapper, .split-right .content-wrapper {
+    position: relative;
+    top: auto !important; 
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    padding: 0 1rem !important;
+  }
+  
+  .hover-details {
+    opacity: 1; 
+    max-height: none;
+    transform: none;
+    margin-top: 0;
+  }
+
+  /* Hide the bulky text on mobile so it stays as a clean banner */
+  .hover-details p, 
+  .hover-details ul, 
+  .hover-details .quote-box {
+    display: none; 
+  }
+  
+  /* Show only the buttons */
+  .split-left .desktop-btn, .split-right .desktop-btn {
+    display: none !important;
+  }
+  .split-left .mobile-btn, .split-right .mobile-btn {
+    display: inline-block !important;
+    margin-top: 1rem;
+    padding: 0.6rem 1.4rem;
+    font-size: 0.85rem;
+  }
+
+  /* Prevent any hover expansions on mobile */
+  .split-hero:has(.split-left:hover) .split-left,
+  .split-hero:has(.split-right:hover) .split-right {
+    min-height: 35vh; /* Banner boyutu ile uyumlu */
+  }
+
+  #ben-kimim {
+    display: none; /* Hide Ben Kimim on mobile */
+  }
+  .mobile-services-section {
+    display: block; /* Show grids on mobile */
+    background: #f8fafc;
+  }
+  
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    flex-direction: column;
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    transform: translateY(-150%);
+    transition: var(--transition);
+    z-index: -1;
+  }
+  
+  .nav-links.active {
+    transform: translateY(0);
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .hide-on-mobile {
+    display: none !important;
+  }
+  
+  .about-section, .contact-section {
+    padding-top: 2rem !important;
+  }
+  
+  .navbar {
+    padding-top: 2rem !important; /* Elif Baziki yazısını aşağı almak için hoperlöre denk gelmemesi için */
+  }
+}
+
+/* Hakkimda Photo Collage */
+.about-collage {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  height: 580px;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+.about-collage img.photo-main {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 280px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  z-index: 1;
+  border: 6px solid var(--white);
+}
+.about-collage img.photo-secondary {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 250px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  z-index: 2;
+  border: 6px solid var(--white);
+  transition: transform 0.3s ease;
+}
+.about-collage:hover img.photo-secondary {
+  transform: scale(1.05) translateX(10px);
+  z-index: 3;
+}
+@media (max-width: 991px) {
+  .about-collage {
+    display: none !important; /* Mobil versiyonda fotoğrafları kaldırıyoruz */
+  }
+}

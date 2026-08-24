@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /content/
+Disallow: /includes/
+Disallow: /templates/
+Allow: /
+
+Sitemap: https://www.elifbaziki.com/sitemap.xml

@@ -3,13 +3,10 @@
 <!-- Hero Section -->
     <header class="hero" style="min-height: 500px; height: 55vh; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; margin-top: 80px; background-color: #111827;">
         <!-- Left Background (Piano) -->
-        <div id="heroBgLeft" style="position: absolute; top: 0; left: 0; width: 60%; height: 100%; background-image: url('<?php echo BASE_URL; ?>/assets/images/specialties_presentation_6.jpg'); background-size: cover; background-position: 40% 17%; background-repeat: no-repeat; z-index: 1;"></div>
-        
-        <!-- Right Background (Stadium) with Crossfade Mask and Color Grade -->
-        <div id="heroBgRight" style="position: absolute; top: 0; right: 0; width: 60%; height: 100%; background-image: url('<?php echo BASE_URL; ?>/assets/images/specialties_presentation_7.jpg'); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; z-index: 1; filter: sepia(35%) saturate(110%) contrast(115%) brightness(85%); -webkit-mask-image: linear-gradient(to left, black 65%, transparent 100%); mask-image: linear-gradient(to left, black 65%, transparent 100%);"></div>
+        <div id="heroBgLeft" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('<?php echo BASE_URL; ?>/assets/images/specialties_presentation_6.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 1;"></div>
         
         <!-- Subtle Unified Vignette / Gradient Overlay -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(31, 41, 55, 0.7), rgba(17, 24, 39, 0.9)); z-index: 2;"></div>
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(31, 41, 55, 0.4), rgba(17, 24, 39, 0.6)); z-index: 2;"></div>
 
         <div class="hero-content" style="position: relative; z-index: 3; max-width: 800px; padding: 2rem; text-align: center;">
             <h1 style="font-size: 3rem; margin-bottom: 0.5rem; color: #FFFFFF; letter-spacing: -1px; font-weight: 800;">Uzmanlık Alanlarım</h1>

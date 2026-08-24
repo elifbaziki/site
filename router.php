@@ -1,1 +1,1 @@
-<?php if (php_sapi_name() == "cli-server") { $path = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH); if (file_exists(__DIR__ . $path) && !is_dir(__DIR__ . $path)) { return false; } else { include_once __DIR__ . "/index.php"; } } ?>
+<?php if (php_sapi_name() == "cli-server") { $path = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH); if (file_exists(__DIR__ . $path) && !is_dir(__DIR__ . $path)) { return false; } else { $_GET["route"] = ltrim($path, "/"); include_once __DIR__ . "/index.php"; } } ?>

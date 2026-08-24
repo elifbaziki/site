@@ -4,6 +4,8 @@ require_once 'includes/functions.php';
 
 $route = isset($_GET['route']) ? rtrim($_GET['route'], '/') : '';
 
+$allowed_pages = ['hakkimda', 'hizmetler', 'iletisim', 'uzmanlik-alanlari'];
+
 // Simple Router
 if ($route == '' || $route == 'anasayfa' || $route == 'index') {
     $page = 'anasayfa.php';
@@ -27,7 +29,6 @@ if ($route == '' || $route == 'anasayfa' || $route == 'index') {
     $page = 'test-detay.php';
 } else {
     // Check if it's a known static page
-    $allowed_pages = ['hakkimda', 'hizmetler', 'iletisim', 'uzmanlik-alanlari'];
     if (in_array($route, $allowed_pages)) {
         $page = $route . '.php';
     } else {

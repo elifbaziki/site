@@ -15,7 +15,9 @@
     <meta property="og:type" content="website">
 
     <title><?php echo isset($site_title) ? $site_title : 'Elif Baziki'; ?></title>
-    <link rel="icon" type="image/png" href="<?php echo BASE_URL; ?>/assets/images/favicon.png">
+    <link rel="icon" type="image/png" href="<?php echo BASE_URL; ?>/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo BASE_URL; ?>/favicon.ico">
+    <link rel="apple-touch-icon" href="<?php echo BASE_URL; ?>/favicon.png">
 
     <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">

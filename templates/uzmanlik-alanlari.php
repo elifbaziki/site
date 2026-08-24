@@ -2,16 +2,16 @@
 
 <!-- Hero Section -->
     <header class="hero" style="min-height: 500px; height: 55vh; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; margin-top: 80px; background-color: #111827;">
-        <!-- Left Background (Piano) -->
-        <div id="heroBgLeft" style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; background-image: url('<?php echo BASE_URL; ?>/assets/images/specialties_presentation_6.jpg'); background-size: cover; background-position: right center; background-repeat: no-repeat; z-index: 1;"></div>
+        <!-- Background Image fading into right side -->
+        <div id="heroBgLeft" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('<?php echo BASE_URL; ?>/assets/images/specialties_presentation_6.jpg'); background-size: cover; background-position: left center; background-repeat: no-repeat; z-index: 1;"></div>
         
-        <!-- Right Background (Temporary Abstract replacement until Image AI recovers) -->
-        <div id="heroBgRight" style="position: absolute; top: 0; right: 0; width: 50%; height: 100%; background-image: url('<?php echo BASE_URL; ?>/assets/images/therapy_room_warm.jpg'); background-size: cover; background-position: left center; background-repeat: no-repeat; z-index: 1; filter: grayscale(100%) brightness(30%) contrast(150%);"></div>
+        <!-- Seamless Fade to Black on the Right -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to right, transparent 30%, #111827 80%); z-index: 2;"></div>
         
         <!-- Subtle Unified Vignette / Gradient Overlay -->
-        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(31, 41, 55, 0.4), rgba(17, 24, 39, 0.6)); z-index: 2;"></div>
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(31, 41, 55, 0.4), rgba(17, 24, 39, 0.6)); z-index: 3;"></div>
 
-        <div class="hero-content" style="position: relative; z-index: 3; max-width: 800px; padding: 2rem; text-align: center;">
+        <div class="hero-content" style="position: relative; z-index: 4; max-width: 800px; padding: 2rem; text-align: center;">
             <h1 style="font-size: 3rem; margin-bottom: 0.5rem; color: #FFFFFF; letter-spacing: -1px; font-weight: 800;">Uzmanlık Alanlarım</h1>
             <p style="font-size: 1.2rem; color: var(--neon-pink); font-weight: 700; margin: 0; letter-spacing: 0.5px; text-transform: uppercase;">Sürdürülebilir İyi Oluş ve Yüksek Performans</p>
         </div>

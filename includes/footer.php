@@ -19,9 +19,9 @@ foreach($links_raw as $l) {
             
             <!-- Column 1: Logo and Text -->
             <div class="footer-brand">
-                <a href="<?php echo BASE_URL; ?>" class="logo" style="display:flex; flex-direction:column; line-height:1.2; color: #fff;">
+                <a href="<?php echo BASE_URL; ?>" class="logo" style="display:flex; flex-direction:column; line-height:1.2; color: #fff; align-items:flex-start;">
                     Elif Baziki
-                    <span style="font-size: 0.65rem; font-weight: 600; color: #bbb; letter-spacing: 2px; text-transform: uppercase;">PSİKOLOG & MENTAL PERFORMANS KOÇU</span>
+                    <span style="font-size: 0.65rem; font-weight: 600; color: #bbb; letter-spacing: 2px; text-transform: uppercase;">KLİNİK PSİKOLOG & MENTAL PERFORMANS KOÇU</span>
                 </a>
                 <p>Sporcular, liderler ve profesyoneller için yüksek performans koçluğu ve psikolojik danışmanlık.</p>
                 <div class="social-links" style="margin-top: 15px;">

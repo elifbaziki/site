@@ -50,9 +50,9 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="<?php echo BASE_URL; ?>" class="logo" style="display:flex; flex-direction:column; line-height:1.2;">
+            <a href="<?php echo BASE_URL; ?>" class="logo" style="display:flex; flex-direction:column; line-height:1.2; align-items:center; text-align:center;">
                 Elif Baziki
-                <span style="font-size: 0.65rem; font-weight: 600; color: #777; letter-spacing: 2px; text-transform: uppercase;">PSİKOLOG & MENTAL PERFORMANS KOÇU</span>
+                <span style="font-size: 0.65rem; font-weight: 600; color: #777; letter-spacing: 2px; text-transform: uppercase;">KLİNİK PSİKOLOG & MENTAL PERFORMANS KOÇU</span>
             </a>
             
             <button class="mobile-menu-btn" aria-label="Menü">

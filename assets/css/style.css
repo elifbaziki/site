@@ -242,7 +242,8 @@ ul {
 .split-hero {
   position: relative;
   width: 100%;
-  height: 85vh; /* Reduced from 100vh to reveal the section below */
+  height: 100vh; 
+  min-height: 800px; /* Ensure content doesn't overflow on small screens */
   overflow: hidden;
   background: #000;
 }
@@ -263,7 +264,7 @@ ul {
   top: 50%;
   width: max-content; /* Only as wide as the text, prevents invisible boundary clipping */
   max-width: 90vw;
-  padding: 2rem;
+  padding: 1rem 2rem;
   z-index: 2;
   transition: all 0.7s cubic-bezier(0.165, 0.84, 0.44, 1);
 }

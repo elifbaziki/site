@@ -8,7 +8,7 @@
     </header>
 
     <!-- About Section -->
-    <section class="section about-section" style="padding-top: 2rem;">
+    <section class="section about-section" style="padding-top: 5rem;">
         <div class="container" style="max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 4rem; align-items: flex-start;">
             
             <!-- Left Side: Overlapping Photo Collage -->

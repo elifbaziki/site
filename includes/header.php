@@ -62,7 +62,7 @@
             </button>
             <div class="nav-links">
                 <a href="<?php echo BASE_URL; ?>"><i class="fas fa-home" style="margin-right: 5px;"></i> Anasayfa</a>
-                <a href="<?php echo BASE_URL; ?>/hakkimda"><i class="fas fa-user" style="margin-right: 5px;"></i> Hakkımda</a>
+                <a href="<?php echo BASE_URL; ?>/hakkimda"><i class="fas fa-user" style="margin-right: 5px;"></i> Hakkında</a>
                 <a href="<?php echo BASE_URL; ?>/uzmanlik-alanlari"><i class="fas fa-brain" style="margin-right: 5px;"></i> Uzmanlık Alanlarım</a>
                 <a href="<?php echo BASE_URL; ?>/hizmetler"><i class="fas fa-couch" style="margin-right: 5px;"></i> Hizmetler</a>
                 <a href="<?php echo BASE_URL; ?>/blog"><i class="fas fa-book-open" style="margin-right: 5px;"></i> Blog</a>

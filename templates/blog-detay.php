@@ -6,8 +6,11 @@ $meta_keywords = htmlspecialchars($post['keywords']);
 $og_image = $post['featured_image'];
 
 require_once BASE_PATH . '/includes/header.php'; 
+
+$is_rich = (strpos($post['content'], '<header class="hero"') !== false);
 ?>
 
+<?php if (!$is_rich): ?>
 <section class="blog-single" style="padding: 120px 0 80px;">
     <div class="container" style="max-width: 800px; margin: 0 auto;">
         
@@ -28,12 +31,13 @@ require_once BASE_PATH . '/includes/header.php';
         <?php endif; ?>
         
         <div class="blog-content" style="font-size: 1.1rem; line-height: 1.8; color: #333;">
-            <?php 
-                // Auto Internal Linking logic happens here
-                echo auto_internal_link($db, $post['content']); 
-            ?>
+            <?php echo auto_internal_link($db, $post['content']); ?>
         </div>
-        
+<?php else: ?>
+        <?php echo auto_internal_link($db, $post['content']); ?>
+        <div class="container" style="max-width: 800px; margin: 0 auto;">
+<?php endif; ?>
+
         <div class="blog-footer" style="margin-top: 50px; padding-top: 30px; border-top: 1px solid #eee; text-align: center;">
             <h3>Yazıyı Paylaş</h3>
             <div class="social-share" style="margin-top: 20px;">
@@ -44,6 +48,8 @@ require_once BASE_PATH . '/includes/header.php';
         </div>
         
     </div>
+<?php if (!$is_rich): ?>
 </section>
+<?php endif; ?>
 
 <?php require_once BASE_PATH . '/includes/footer.php'; ?>
